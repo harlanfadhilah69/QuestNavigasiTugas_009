@@ -43,5 +43,15 @@ fun HalamanPertama(
                 top = 130.dp,
             )
         )
+        Text(
+            text = "ONIC ESPORT",
+            fontSize = 35.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.White,
+            modifier = Modifier.padding(
+                start = 98.dp,
+                top = 180.dp,
+            )
+        )
     }
 }
