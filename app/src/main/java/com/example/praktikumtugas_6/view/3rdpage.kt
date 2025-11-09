@@ -154,6 +154,33 @@ fun FormulirDaftar(
                 )
 
                 Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Jenis Kelamin",
+                    fontSize = 17.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black,
+                    modifier = Modifier.padding(
+                        start = 25.dp,
+                        top = 10.dp,
+                    )
+                )
+                Row {
+                    gender.forEach { item ->
+                        Row(
+                            modifier = Modifier.selectable(
+                                selected = textJK == item,
+                                onClick = { textJK = item }
+                            ).padding(top = 5.dp, start = 15.dp, end = 10.dp),
+                            verticalAlignment = Alignment.CenterVertically) {
+                            RadioButton(
+                                selected = textJK == item,
+                                onClick = {
+                                    textJK = item
+                                })
+                            Text(text = item)
+                        }
+                    }
+                }
             }
         }
     }
