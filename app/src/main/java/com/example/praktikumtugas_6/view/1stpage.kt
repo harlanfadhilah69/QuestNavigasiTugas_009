@@ -26,6 +26,13 @@ import com.example.praktikumtugas_6.R
 fun HalamanPertama(
     onMasukClicked : () -> Unit
 ) {
-    {
+    Box(modifier = Modifier.fillMaxSize()) {
+        Image(
+            painter = painterResource(id = R.drawable.backgroundd),
+            contentDescription = "ONIC Background",
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier.matchParentSize()
+        )
+
     }
 }
