@@ -55,6 +55,23 @@ fun FormulirDaftar(
     onSubmitClicked : () -> Unit
 
 ){
+        var textNama by remember { mutableStateOf(value = "") }
+        var textNick by remember { mutableStateOf(value = "") }
+        var textJK by remember { mutableStateOf(value = "") }
+        var textRole by remember { mutableStateOf(value = "") }
+        var textKota by remember { mutableStateOf(value = "") }
+
+        var nama by remember { mutableStateOf(value = "") }
+        var nickname by remember { mutableStateOf(value = "") }
+        var jenis by remember { mutableStateOf(value = "") }
+        var role by remember { mutableStateOf(value = "") }
+        var kota by remember { mutableStateOf(value = "") }
+        var expanded by remember { mutableStateOf(false) }
+        var selectedText by remember { mutableStateOf("") }
+        var showDialog by remember { mutableStateOf(false) }
+
+        val gender: List<String> = listOf("Laki-laki", "Perempuan")
+        val roleOptions = listOf("Pilih Role", "Jungler", "Midlaner", "Roamer", "Goldlaner", "Explaner")
 
 }
 
