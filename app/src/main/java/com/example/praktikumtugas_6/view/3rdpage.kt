@@ -73,8 +73,15 @@ fun FormulirDaftar(
         val gender: List<String> = listOf("Laki-laki", "Perempuan")
         val roleOptions = listOf("Pilih Role", "Jungler", "Midlaner", "Roamer", "Goldlaner", "Explaner")
 
+    Box(modifier = Modifier.fillMaxSize()) {
+        Image(
+            painter = painterResource(id = R.drawable.backgroundd),
+            contentDescription = "ONIC Background",
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier.matchParentSize()
+        )
+    }
 }
-
 
 
 
