@@ -37,6 +37,39 @@ fun ListPesertaScreen(
 
 ) {
     Scaffold(
+        bottomBar = {
+            BottomAppBar(
+                containerColor = Color.LightGray.copy(alpha = 0.5f)
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 20.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.Bottom
+                ) {
+                    Button(
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(55.dp)
+                            .padding(end = 10.dp),
+                        onClick = onBerandaClicked,
+                        colors = ButtonDefaults.buttonColors(containerColor = Color.White)
+                    ) {
+                        Text(stringResource(id = R.string.beranda), color = Color.Black)
+                    }
+                    Button(
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(55.dp),
+                        onClick = onFormulirClicked,
+                        colors = ButtonDefaults.buttonColors(containerColor = Color.White)
+                    ) {
+                        Text(stringResource(id = R.string.formulir), color = Color.Black)
+                    }
+                }
+            }
+        }
     ) { innerPadding ->
         val datalist = listOf(
             PlayerData(
