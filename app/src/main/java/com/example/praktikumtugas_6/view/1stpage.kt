@@ -53,5 +53,25 @@ fun HalamanPertama(
                 top = 180.dp,
             )
         )
+        Text(
+            text = "Harlan Fadhilah",
+            fontSize = 25.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.LightGray,
+            modifier = Modifier.padding(
+                start = 115.dp,
+                top = 550.dp,
+            )
+        )
+        Text(
+            text = "20230140009",
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.LightGray,
+            modifier = Modifier.padding(
+                start = 137.dp,
+                top = 590.dp,
+            )
+        )
     }
 }
