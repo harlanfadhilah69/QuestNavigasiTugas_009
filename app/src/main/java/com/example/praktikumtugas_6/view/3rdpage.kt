@@ -73,15 +73,40 @@ fun FormulirDaftar(
         val gender: List<String> = listOf("Laki-laki", "Perempuan")
         val roleOptions = listOf("Pilih Role", "Jungler", "Midlaner", "Roamer", "Goldlaner", "Explaner")
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize()){
         Image(
             painter = painterResource(id = R.drawable.backgroundd),
             contentDescription = "ONIC Background",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier.matchParentSize()
         )
+        Text(text = "Formulir Pendaftaran",
+            fontSize = 35.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.White,
+            modifier = Modifier.padding(
+                start = 46.dp,
+                top = 35.dp,
+            )
+        )
+        Column (modifier = Modifier.padding(top = 5.dp),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally) {
+            Card(
+                modifier = Modifier
+                    .padding(top = 80.dp, start = 10.dp, end = 10.dp)
+                    .fillMaxWidth()
+                    .height(720.dp),
+                shape = RoundedCornerShape(30.dp),
+                colors = CardDefaults.outlinedCardColors(
+                    containerColor = Color.LightGray.copy(alpha = 0.9f)
+                )
+            ) {
+            }
+        }
     }
 }
+
 
 
 
