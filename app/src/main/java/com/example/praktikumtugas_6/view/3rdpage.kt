@@ -73,14 +73,15 @@ fun FormulirDaftar(
         val gender: List<String> = listOf("Laki-laki", "Perempuan")
         val roleOptions = listOf("Pilih Role", "Jungler", "Midlaner", "Roamer", "Goldlaner", "Explaner")
 
-    Box(modifier = Modifier.fillMaxSize()){
+    Box(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(id = R.drawable.backgroundd),
             contentDescription = "ONIC Background",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier.matchParentSize()
         )
-        Text(text = "Formulir Pendaftaran",
+        Text(
+            text = "Formulir Pendaftaran",
             fontSize = 35.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White,
@@ -89,9 +90,11 @@ fun FormulirDaftar(
                 top = 35.dp,
             )
         )
-        Column (modifier = Modifier.padding(top = 5.dp),
+        Column(
+            modifier = Modifier.padding(top = 5.dp),
             verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally) {
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Card(
                 modifier = Modifier
                     .padding(top = 80.dp, start = 10.dp, end = 10.dp)
@@ -102,6 +105,32 @@ fun FormulirDaftar(
                     containerColor = Color.LightGray.copy(alpha = 0.9f)
                 )
             ) {
+                Text(
+                    text = "Nama Lengkap",
+                    fontSize = 17.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black,
+                    modifier = Modifier.padding(
+                        start = 25.dp,
+                        top = 25.dp,
+                    )
+                )
+
+                OutlinedTextField(
+                    value = textNama,
+                    singleLine = true,
+                    shape = MaterialTheme.shapes.large,
+                    modifier = Modifier
+                        .width(width = 390.dp)
+                        .padding(top = 10.dp, start = 20.dp)
+                        .height(height = 85.dp),
+                    label = { Text(text = "Nama Lengkap") },
+                    onValueChange = {
+                        textNama = it
+                    }
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+
             }
         }
     }
