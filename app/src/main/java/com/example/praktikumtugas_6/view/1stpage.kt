@@ -81,6 +81,14 @@ fun HalamanPertama(
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.DarkGray
             )
-        ) {}
+        ) {
+            Text(
+                text =
+                    stringResource(id = R.string.masuk),
+                fontSize = 17.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
+        }
     }
 }
