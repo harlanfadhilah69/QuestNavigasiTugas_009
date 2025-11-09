@@ -29,3 +29,11 @@ data class PlayerData(
     @DrawableRes val photoResource: Int
 )
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun ListPesertaScreen(
+    onBerandaClicked: () -> Unit,
+    onFormulirClicked: () -> Unit
+
+) {
+}
