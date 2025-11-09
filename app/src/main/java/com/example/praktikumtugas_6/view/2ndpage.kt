@@ -120,6 +120,14 @@ fun ListPesertaScreen(
                 verticalAlignment = Alignment.Top
             ) {
 
+                Image(
+                    painter = painterResource(id = data.photoResource),
+                    contentDescription = "Foto Profil ${data.nama}",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .size(width = 170.dp, height = 210.dp)
+                        .padding(end = 10.dp)
+                )
             }
         }
     }
