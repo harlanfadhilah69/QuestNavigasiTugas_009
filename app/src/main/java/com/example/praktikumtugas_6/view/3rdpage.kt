@@ -54,34 +54,33 @@ fun FormulirDaftar(
     onBackClicked : () -> Unit,
     onSubmitClicked : () -> Unit
 
-) {
-    var textNama by remember { mutableStateOf(value = "") }
-    var textNick by remember { mutableStateOf(value = "") }
-    var textJK by remember { mutableStateOf(value = "") }
-    var textRole by remember { mutableStateOf(value = "") }
-    var textKota by remember { mutableStateOf(value = "") }
+){
+        var textNama by remember { mutableStateOf(value = "") }
+        var textNick by remember { mutableStateOf(value = "") }
+        var textJK by remember { mutableStateOf(value = "") }
+        var textRole by remember { mutableStateOf(value = "") }
+        var textKota by remember { mutableStateOf(value = "") }
 
-    var nama by remember { mutableStateOf(value = "") }
-    var nickname by remember { mutableStateOf(value = "") }
-    var jenis by remember { mutableStateOf(value = "") }
-    var role by remember { mutableStateOf(value = "") }
-    var kota by remember { mutableStateOf(value = "") }
-    var expanded by remember { mutableStateOf(false) }
-    var selectedText by remember { mutableStateOf("") }
-    var showDialog by remember { mutableStateOf(false) }
+        var nama by remember { mutableStateOf(value = "") }
+        var nickname by remember { mutableStateOf(value = "") }
+        var jenis by remember { mutableStateOf(value = "") }
+        var role by remember { mutableStateOf(value = "") }
+        var kota by remember { mutableStateOf(value = "") }
+        var expanded by remember { mutableStateOf(false) }
+        var selectedText by remember { mutableStateOf("") }
+        var showDialog by remember { mutableStateOf(false) }
 
-    val gender: List<String> = listOf("Laki-laki", "Perempuan")
-    val roleOptions = listOf("Pilih Role", "Jungler", "Midlaner", "Roamer", "Goldlaner", "Explaner")
+        val gender: List<String> = listOf("Laki-laki", "Perempuan")
+        val roleOptions = listOf("Pilih Role", "Jungler", "Midlaner", "Roamer", "Goldlaner", "Explaner")
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize()){
         Image(
             painter = painterResource(id = R.drawable.backgroundd),
             contentDescription = "ONIC Background",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier.matchParentSize()
         )
-        Text(
-            text = "Formulir Pendaftaran",
+        Text(text = "Formulir Pendaftaran",
             fontSize = 35.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White,
@@ -90,11 +89,9 @@ fun FormulirDaftar(
                 top = 35.dp,
             )
         )
-        Column(
-            modifier = Modifier.padding(top = 5.dp),
+        Column (modifier = Modifier.padding(top = 5.dp),
             verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
+            horizontalAlignment = Alignment.CenterHorizontally) {
             Card(
                 modifier = Modifier
                     .padding(top = 80.dp, start = 10.dp, end = 10.dp)
@@ -307,6 +304,71 @@ fun FormulirDaftar(
                 }
             }
         }
+    }
+    if (showDialog) {
+        DataSummaryDialog(
+            nama = textNama,
+            nickname = textNick,
+            gender = textJK,
+            role = selectedText,
+            kotaAsal = textKota,
+            onDismiss = {
+                showDialog = false
+            },
+            onConfirm = {
+                showDialog = false
+                onSubmitClicked()
+            }
+        )
+    }
+}
+
+@Composable
+fun DataSummaryDialog(
+    nama: String,
+    nickname: String,
+    gender: String,
+    role: String,
+    kotaAsal: String,
+    onDismiss: () -> Unit,
+    onConfirm: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text(text = "Konfirmasi Data Pendaftaran")
+        },
+        text = {
+            Column {
+                Text(text = "Pastikan data sudah benar:", fontWeight = FontWeight.SemiBold)
+                Spacer(modifier = Modifier.height(8.dp))
+                Divider()
+
+                SummaryRow(label = "Nama Lengkap", value = nama)
+                SummaryRow(label = "Nickname MLBB", value = nickname)
+                SummaryRow(label = "Jenis Kelamin", value = gender)
+                SummaryRow(label = "Role", value = role)
+                SummaryRow(label = "Kota Asal", value = kotaAsal)
+            }
+        },
+        confirmButton = {
+            Button(onClick = onConfirm) {
+                Text("Konfirmasi")
+            }
+        },
+        dismissButton = {
+            OutlinedButton(onClick = onDismiss) {
+                Text("Batal")
+            }
+        }
+    )
+}
+
+@Composable
+fun SummaryRow(label: String, value: String) {
+    Row (modifier = Modifier.fillMaxWidth()){
+        Text(text = label, modifier = Modifier.weight(0.4f), fontWeight = FontWeight.Medium)
+        Text(text = value, modifier = Modifier.weight(0.6f))
     }
 }
 
