@@ -181,6 +181,56 @@ fun FormulirDaftar(
                         }
                     }
                 }
+                Text(
+                    text = "Role",
+                    fontSize = 17.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black,
+                    modifier = Modifier.padding(
+                        start = 25.dp,
+                        top = 10.dp,
+                    )
+                )
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                ExposedDropdownMenuBox(
+                    expanded = expanded,
+                    onExpandedChange = { expanded = !expanded },
+                    modifier = Modifier
+                        .padding(horizontal = 20.dp)
+                        .fillMaxWidth()
+                ) {
+
+                    OutlinedTextField(
+                        modifier = Modifier
+                            .menuAnchor()
+                            .fillMaxWidth(),
+                        readOnly = true,
+                        value = selectedText.ifEmpty { "Pilih Role" },
+                        onValueChange = {},
+                        trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
+                        colors = ExposedDropdownMenuDefaults.textFieldColors()
+                    )
+
+                    ExposedDropdownMenu(
+                        expanded = expanded,
+                        onDismissRequest = { expanded = false }
+                    ) {
+                        roleOptions.forEach { option ->
+                            DropdownMenuItem(
+                                text = { Text(option) },
+                                onClick = {
+                                    selectedText = option
+                                    expanded = false
+                                    role = option
+                                },
+                                contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
+                            )
+                        }
+                    }
+                }
+
             }
         }
     }
