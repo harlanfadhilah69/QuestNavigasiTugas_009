@@ -33,6 +33,15 @@ fun HalamanPertama(
             contentScale = ContentScale.FillBounds,
             modifier = Modifier.matchParentSize()
         )
-
+        Text(
+            text = "SELAMAT DATANG",
+            fontSize = 35.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.White,
+            modifier = Modifier.padding(
+                start = 60.dp,
+                top = 130.dp,
+            )
+        )
     }
 }
