@@ -36,4 +36,47 @@ fun ListPesertaScreen(
     onFormulirClicked: () -> Unit
 
 ) {
-}
+        val datalist = listOf(
+            PlayerData(
+                nama = "Kairi Rayosdelsol",
+                nickname = "ONIC Kairi",
+                gender = "Laki - Laki",
+                role = "Jungler",
+                kotaAsal = "Filipina",
+                photoResource = R.drawable.kairi
+            ),
+            PlayerData(
+                nama = "Gilang",
+                nickname = "ONIC SANZ",
+                gender = "Laki - Laki",
+                role = "Midlaner",
+                kotaAsal = "Makassar",
+                photoResource = R.drawable.sanz
+            ),
+            PlayerData(
+                nama = "Nicky Fernando",
+                nickname = "ONIC Kiboy",
+                gender = "Laki - Laki",
+                role = "Roamer",
+                kotaAsal = "Manado",
+                photoResource = R.drawable.kiboy
+            ),
+            PlayerData(
+                nama = "Schevenko David",
+                nickname = "ONIC Skylar",
+                gender = "Laki - Laki",
+                role = "Goldlaner",
+                kotaAsal = "Manado",
+                photoResource = R.drawable.skylar
+
+            ),
+            PlayerData(
+                nama = "Lutfi Ardiansyah",
+                nickname = "ONIC Lutpiii",
+                gender = "Laki - Laki",
+                role = "Explaner",
+                kotaAsal = "Sidoarjo",
+                photoResource = R.drawable.lutpi
+            )
+        )
+    }
