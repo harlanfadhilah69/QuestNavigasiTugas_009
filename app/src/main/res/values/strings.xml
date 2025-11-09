@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">PraktikumTugas_6</string>
-    <string name="submit">Submit</string>
+    <string name="submit">SUBMIT</string>
+    <string name="kembali">Kembali</string>
+    <string name="beranda">Beranda</string>
+    <string name="formulir">Formulir</string>
+    <string name="masuk">MASUK</string>
     <string name="nama_lengkap">NAMA LENGKAP</string>
+    <string name="nickname">NICK NAME</string>
     <string name="jenis_kelamin">JENIS KELAMIN</string>
     <string name="role">ROLE</string>
     <string name="kota_asal">KOTA ASAL</string>
