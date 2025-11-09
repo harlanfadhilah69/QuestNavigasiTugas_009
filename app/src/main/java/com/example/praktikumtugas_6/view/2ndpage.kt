@@ -85,6 +85,13 @@ fun ListPesertaScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-        )
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.backgroundd),
+                contentDescription = "ONIC Background",
+                contentScale = ContentScale.FillBounds,
+                modifier = Modifier.matchParentSize()
+            )
+        }
     }
 }
