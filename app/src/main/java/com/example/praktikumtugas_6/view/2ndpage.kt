@@ -128,6 +128,54 @@ fun ListPesertaScreen(
                         .size(width = 170.dp, height = 210.dp)
                         .padding(end = 10.dp)
                 )
+
+                Column(modifier = Modifier.weight(1f)) {
+
+                    DetailRow(
+                        label = stringResource(id = R.string.nama_lengkap),
+                        value = data.nama,
+                        isNama = true
+                    )
+
+                    Spacer(modifier = Modifier.height(2.dp))
+
+                    DetailRow(
+                        label = stringResource(id = R.string.nickname),
+                        value = data.nickname,
+                        isNama = false
+                    )
+
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Row(modifier = Modifier.fillMaxWidth()) {
+                        DetailRow(
+                            label = stringResource(id = R.string.role),
+                            value = data.role,
+                            modifier = Modifier.weight(1f)
+                        )
+                        DetailRow(
+                            label = stringResource(id = R.string.jenis_kelamin),
+                            value = data.gender,
+                            modifier = Modifier.weight(1f)
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    DetailRow(
+                        label = stringResource(id = R.string.kota_asal),
+                        value = data.kotaAsal,
+                    )
+                }
             }
         }
+    }
+
+    @Composable
+    fun DetailRow(
+        label: String,
+        value: String,
+        modifier: Modifier = Modifier,
+        isNama: Boolean = false
+    ) {
     }
