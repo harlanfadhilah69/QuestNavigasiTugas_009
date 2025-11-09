@@ -231,6 +231,33 @@ fun FormulirDaftar(
                     }
                 }
 
+                Text(
+                    text = "Kota Asal",
+                    fontSize = 17.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black,
+                    modifier = Modifier.padding(
+                        start = 25.dp,
+                        top = 10.dp,
+                    )
+                )
+
+                OutlinedTextField(
+                    value = textKota,
+                    singleLine = true,
+                    shape = MaterialTheme.shapes.large,
+                    modifier = Modifier
+                        .width(width = 390.dp)
+                        .padding(top = 10.dp, start = 20.dp)
+                        .height(height = 85.dp),
+                    label = { Text(text = "Kota Asal") },
+                    onValueChange = {
+                        textKota = it
+                    }
+                )
+
+                Spacer(modifier = Modifier.height(20.dp))
+
             }
         }
     }
