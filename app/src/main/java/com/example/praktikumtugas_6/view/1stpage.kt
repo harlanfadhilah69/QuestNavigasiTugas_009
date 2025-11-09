@@ -73,5 +73,14 @@ fun HalamanPertama(
                 top = 590.dp,
             )
         )
+        Button(
+            modifier = Modifier.fillMaxWidth(fraction = 1f)
+                .padding(top = 700.dp, start = 50.dp, end = 50.dp)
+                .height(height = 70.dp),
+            onClick = onMasukClicked,
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.DarkGray
+            )
+        ) {}
     }
 }
