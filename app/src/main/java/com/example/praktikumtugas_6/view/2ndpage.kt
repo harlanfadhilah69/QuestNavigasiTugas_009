@@ -107,5 +107,12 @@ fun ListPesertaScreen(
 
     @Composable
     fun ListElement(data: PlayerData) {
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            colors = CardDefaults.outlinedCardColors(
+                containerColor = Color.LightGray.copy(alpha = 0.9f)
+            )
+        ) {
 
+        }
     }
