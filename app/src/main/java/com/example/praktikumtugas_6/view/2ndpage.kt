@@ -93,5 +93,19 @@ fun ListPesertaScreen(
                 modifier = Modifier.matchParentSize()
             )
         }
+        LazyColumn(
+            contentPadding = PaddingValues(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.fillMaxSize()
+        ) {
+            items(datalist) { data ->
+                ListElement(data = data)
+            }
+        }
     }
 }
+
+    @Composable
+    fun ListElement(data: PlayerData) {
+
+    }
