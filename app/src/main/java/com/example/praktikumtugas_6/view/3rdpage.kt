@@ -54,33 +54,34 @@ fun FormulirDaftar(
     onBackClicked : () -> Unit,
     onSubmitClicked : () -> Unit
 
-){
-        var textNama by remember { mutableStateOf(value = "") }
-        var textNick by remember { mutableStateOf(value = "") }
-        var textJK by remember { mutableStateOf(value = "") }
-        var textRole by remember { mutableStateOf(value = "") }
-        var textKota by remember { mutableStateOf(value = "") }
+) {
+    var textNama by remember { mutableStateOf(value = "") }
+    var textNick by remember { mutableStateOf(value = "") }
+    var textJK by remember { mutableStateOf(value = "") }
+    var textRole by remember { mutableStateOf(value = "") }
+    var textKota by remember { mutableStateOf(value = "") }
 
-        var nama by remember { mutableStateOf(value = "") }
-        var nickname by remember { mutableStateOf(value = "") }
-        var jenis by remember { mutableStateOf(value = "") }
-        var role by remember { mutableStateOf(value = "") }
-        var kota by remember { mutableStateOf(value = "") }
-        var expanded by remember { mutableStateOf(false) }
-        var selectedText by remember { mutableStateOf("") }
-        var showDialog by remember { mutableStateOf(false) }
+    var nama by remember { mutableStateOf(value = "") }
+    var nickname by remember { mutableStateOf(value = "") }
+    var jenis by remember { mutableStateOf(value = "") }
+    var role by remember { mutableStateOf(value = "") }
+    var kota by remember { mutableStateOf(value = "") }
+    var expanded by remember { mutableStateOf(false) }
+    var selectedText by remember { mutableStateOf("") }
+    var showDialog by remember { mutableStateOf(false) }
 
-        val gender: List<String> = listOf("Laki-laki", "Perempuan")
-        val roleOptions = listOf("Pilih Role", "Jungler", "Midlaner", "Roamer", "Goldlaner", "Explaner")
+    val gender: List<String> = listOf("Laki-laki", "Perempuan")
+    val roleOptions = listOf("Pilih Role", "Jungler", "Midlaner", "Roamer", "Goldlaner", "Explaner")
 
-    Box(modifier = Modifier.fillMaxSize()){
+    Box(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(id = R.drawable.backgroundd),
             contentDescription = "ONIC Background",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier.matchParentSize()
         )
-        Text(text = "Formulir Pendaftaran",
+        Text(
+            text = "Formulir Pendaftaran",
             fontSize = 35.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White,
@@ -89,9 +90,11 @@ fun FormulirDaftar(
                 top = 35.dp,
             )
         )
-        Column (modifier = Modifier.padding(top = 5.dp),
+        Column(
+            modifier = Modifier.padding(top = 5.dp),
             verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally) {
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Card(
                 modifier = Modifier
                     .padding(top = 80.dp, start = 10.dp, end = 10.dp)
@@ -258,6 +261,50 @@ fun FormulirDaftar(
 
                 Spacer(modifier = Modifier.height(20.dp))
 
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 20.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.Bottom
+                ) {
+                    Button(
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(55.dp)
+                            .padding(end = 10.dp),
+                        onClick = onBackClicked,
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color.LightGray,
+                            contentColor = Color.Black
+                        )
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.kembali),
+                            fontSize = 17.sp,
+                            fontWeight = FontWeight.Bold,
+                        )
+                    }
+
+                    Button(
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(55.dp),
+                        onClick = {
+                            showDialog = true
+                        },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color.Black
+                        )
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.submit),
+                            fontSize = 17.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White
+                        )
+                    }
+                }
             }
         }
     }
