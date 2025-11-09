@@ -36,6 +36,8 @@ fun ListPesertaScreen(
     onFormulirClicked: () -> Unit
 
 ) {
+    Scaffold(
+    ) { innerPadding ->
         val datalist = listOf(
             PlayerData(
                 nama = "Kairi Rayosdelsol",
@@ -79,4 +81,10 @@ fun ListPesertaScreen(
                 photoResource = R.drawable.lutpi
             )
         )
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+        )
     }
+}
