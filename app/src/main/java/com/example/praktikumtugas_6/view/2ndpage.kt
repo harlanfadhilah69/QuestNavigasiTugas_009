@@ -178,4 +178,18 @@ fun ListPesertaScreen(
         modifier: Modifier = Modifier,
         isNama: Boolean = false
     ) {
+        Column(modifier = modifier) {
+            Text(
+                text = label,
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Normal,
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+            )
+            Text(
+                text = value,
+                fontSize = if (isNama) 16.sp else 14.sp,
+                fontWeight = if (isNama) FontWeight.Bold else FontWeight.Normal,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+        }
     }
